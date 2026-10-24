@@ -320,6 +320,14 @@ html {
   background-image: none;
 }
 
+.MuiCardMedia-root.defaultCardBackground {
+  background-color: var(--second-background) !important;
+}
+
+.MuiCardMedia-root[style*="background-image"] {
+  color: var(--white-text);
+}
+
 .playlistSectionButton,
 .noBackdropTransparency .detailPagePrimaryContainer {
   background: var(--second-background);
