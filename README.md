@@ -40,7 +40,7 @@
     ```css
     @import url('https://jellyfin.catppuccin.com/theme.css');
     ```
-2. Open settings, navigate to Display and paste the CSS into the section called "Custom CSS code"
+2. Paste the CSS into Dashboard > Branding > "Custom CSS code" for all users, or Settings > Display > "Custom CSS code" for this client
 3. Copy your preferred flavor's import rule and paste it **after** the theme import:
     ```css
     /* 🌻 Latte */
@@ -64,8 +64,9 @@ Translucent controls use relative RGB colors, so use a browser that supports the
 
 Jellyfin 12.3 does not load Branding Custom CSS on the server dashboard. Its
 [dashboard layout](https://github.com/jellyfin/jellyfin-web/blob/v12.3/src/apps/dashboard/AppLayout.tsx)
-does not render the CustomCss component. Theme CSS cannot fix this client limitation.
-The dashboard will keep its built-in theme even when the rest of the client uses Catppuccin.
+does not render the CustomCss component. To theme the dashboard too, the web client must
+render `<CustomCss />` after `<ThemeCss dashboard />`, as the modern layout already does.
+The theme's dashboard palette mappings take effect once the client loads the stylesheet.
 
 ## Customization
 
